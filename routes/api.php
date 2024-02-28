@@ -15,19 +15,20 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::middleware('auth:sanctum')->group(function () {
 });
-
-// Create task
-
 // List tasks
 Route::get('tasks', [TaskController::class, 'index'])->name('tasks.index');
 
-// Update task
+// Create task (with status and users)
+Route::post('tasks', [TaskController::class, 'store'])->name('tasks.store');
+
+// Update task (with status and users)
+Route::put('tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
 
 // Delete task
-
-// Assign user
-
-// Change status
+Route::delete('tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');

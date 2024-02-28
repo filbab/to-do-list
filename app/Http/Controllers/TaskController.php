@@ -4,11 +4,38 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Domain\Task\TaskService;
+use App\Http\Requests\CreateTaskRequest;
+use App\Http\Requests\Task\ShowTasksRequest;
+use App\Http\Resources\Task as ResourcesTask;
 
 class TaskController extends Controller
 {
-    public function index(Request $request)
+    public function index(ShowTasksRequest $request, TaskService $task_service)
     {
-        return response()->json(Task::all());
+        $tasks = $task_service->getTasks($request);
+
+        return ResourcesTask::collection($tasks);
+    }
+
+    public function store(CreateTaskRequest $request, TaskService $task_service)
+    {
+        $task = $task_service->storeTask($request);
+
+        return ResourcesTask::make($task);
+    }
+
+    public function update(ShowTasksRequest $request, TaskService $task_service)
+    {
+        $task = $task_service->updateTask($request);
+
+        return ResourcesTask::make($task);
+    }
+
+    public function destroy(ShowTasksRequest $request, TaskService $task_service)
+    {
+        $task_service->removeTask($request);
+
+        return response()->json([], 204);
     }
 }
