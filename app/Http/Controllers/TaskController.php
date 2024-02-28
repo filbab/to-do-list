@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Task;
-use Illuminate\Http\Request;
 use Domain\Task\TaskService;
-use App\Http\Requests\CreateTaskRequest;
 use App\Http\Requests\Task\ShowTasksRequest;
+use App\Http\Requests\Task\CreateTaskRequest;
 use App\Http\Resources\Task as ResourcesTask;
 
 class TaskController extends Controller
