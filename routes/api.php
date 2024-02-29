@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Responses\TaskDoesNotExist;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,13 @@ Route::get('tasks', [TaskController::class, 'index'])->name('tasks.index');
 Route::post('tasks', [TaskController::class, 'store'])->name('tasks.store');
 
 // Update task (with status and users)
-Route::put('tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
+Route::put('tasks/{task}', [TaskController::class, 'update'])->name('tasks.update')
+   ->missing(function () {
+      return new TaskDoesNotExist();
+   });
 
 // Delete task
-Route::delete('tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+Route::delete('tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy')
+   ->missing(function () {
+      return new TaskDoesNotExist();
+   });
