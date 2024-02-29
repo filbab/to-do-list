@@ -3,36 +3,43 @@
 namespace App\Http\Controllers;
 
 use Domain\Task\TaskService;
+use Domain\Task\Entities\Models\Task;
+use App\Http\Resources\Task as TaskResource;
 use App\Http\Requests\Task\ShowTasksRequest;
 use App\Http\Requests\Task\CreateTaskRequest;
-use App\Http\Resources\Task as ResourcesTask;
+use App\Http\Requests\Task\UpdateTaskRequest;
 
 class TaskController extends Controller
 {
-    public function index(ShowTasksRequest $request, TaskService $task_service)
-    {
-        $tasks = $task_service->getTasks($request);
+    public function __construct(
+        private TaskService $service
+    ) {}
 
-        return ResourcesTask::collection($tasks);
+    public function index(ShowTasksRequest $request)
+    {
+        $tasks = $this->service->getTasks($request);
+
+        return TaskResource::collection($tasks);
     }
 
-    public function store(CreateTaskRequest $request, TaskService $task_service)
-    {
-        $task = $task_service->storeTask($request);
 
-        return ResourcesTask::make($task);
+    public function store(CreateTaskRequest $request)
+    {
+        $task = $this->service->storeTask($request);
+
+        return TaskResource::make($task);
     }
 
-    public function update(ShowTasksRequest $request, TaskService $task_service)
+    public function update(UpdateTaskRequest $request, Task $task)
     {
-        $task = $task_service->updateTask($request);
+        $task = $this->service->updateTask($request, $task);
 
-        return ResourcesTask::make($task);
+        return TaskResource::make($task);
     }
 
-    public function destroy(ShowTasksRequest $request, TaskService $task_service)
+    public function destroy(Task $task)
     {
-        $task_service->removeTask($request);
+        $this->service->destroyTask($task);
 
         return response()->json([], 204);
     }
