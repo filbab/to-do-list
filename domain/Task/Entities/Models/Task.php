@@ -23,7 +23,7 @@ class Task extends BaseModel
       return $this->title;
    }
 
-   public function getDescription(): string
+   public function getDescription(): ?string
    {
       return $this->description;
    }
@@ -62,7 +62,7 @@ class Task extends BaseModel
    public function scopeByUserIds(Builder $query, ?array $user_ids): void
    {
       $query->whereHas('users', function (Builder $query) use ($user_ids) {
-         $query->whereIn('id', $user_ids);
+         $query->whereIn('user_id', $user_ids);
       });
    }
 }
