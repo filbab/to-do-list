@@ -10,6 +10,7 @@ use Domain\Task\Entities\Models\Task;
 use Domain\Task\Commands\TaskCommand;
 use App\Http\Requests\Task\ShowTasksRequest;
 use App\Http\Requests\Task\CreateTaskRequest;
+use App\Http\Requests\Task\UpdateTaskRequest;
 
 class TaskService
 {
@@ -33,13 +34,13 @@ class TaskService
       
    }
 
-   public function updateTask(ShowTasksRequest $request): Task
+   public function updateTask(UpdateTaskRequest $request, Task $task): Task
    {
-      return $this->task_command->update($request);
+      return $this->task_command->update($request, $task);
    }
 
-   public function removeTask(ShowTasksRequest $request): void
+   public function destroyTask(Task $task): void
    {
-      $this->task_command->remove($request);
+      $this->task_command->destroy($task);
    }
 }

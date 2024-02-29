@@ -6,6 +6,7 @@ namespace Domain\Task\Commands;
 
 use Domain\Task\Entities\Models\Task;
 use App\Http\Requests\Task\CreateTaskRequest;
+use App\Http\Requests\Task\UpdateTaskRequest;
 
 class TaskCommand
 {
@@ -28,5 +29,24 @@ class TaskCommand
       UserTaskSynchronizer::syncUsers($new_task, $request->getUserIds());
 
       return $new_task;
+   }
+
+   public function update(UpdateTaskRequest $request, Task $task): Task
+   {
+      $task->update([
+         'title' => $request->getTitle(),
+         'description' => $request->getDescription(),
+         'status' => $request->getStatus()
+      ]);
+
+      // Sync users
+      UserTaskSynchronizer::syncUsers($task, $request->getUserIds());
+
+      return $task;
+   }
+
+   public function destroy(Task $task): void
+   {
+      $task->delete();
    }
 }
