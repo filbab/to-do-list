@@ -26,8 +26,6 @@ class CreateUsers extends Command
      */
     public function handle(): void
     {
-      // dd($this->option('count'));
-
       $count = $this->option('count');
 
       User::factory()->count($count)->create();
