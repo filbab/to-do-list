@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Task;
-use App\Models\Descriptors\TaskStatus;
+use App\Models\TaskStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TaskFactory extends Factory
@@ -15,7 +15,7 @@ class TaskFactory extends Factory
         return [
             'title' => $this->faker->name(),
             'description' => $this->faker->text(),
-            'status' => $this->faker->randomElement(TaskStatus::values()),
+            'status_id' => TaskStatus::factory(),
         ];
     }
 }
