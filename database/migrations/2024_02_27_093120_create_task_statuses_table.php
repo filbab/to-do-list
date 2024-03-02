@@ -11,18 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('task_statuses', function (Blueprint $table) {
             $table->id();
-            
-            $table->string('title');
-            $table->text('description')->nullable();
-
-            $table->unsignedBigInteger('status_id');
-            $table->foreign('status_id')->references('id')->on('task_statuses')->onDelete('cascade');
-
-            $table->index(['status_id', 'title']);
-
-            $table->timestamps();
+            $table->string('name');
         });
     }
 
