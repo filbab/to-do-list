@@ -13,7 +13,7 @@ class UpdateTaskRequest extends FormRequest
         return [
             'title' => ['present', 'string'],
             'description' => ['present', 'nullable', 'string'],
-            'status' => ['present', Rule::enum(TaskStatus::class)],
+            'status' => ['present', 'exists:App\Models\TaskStatus,name'],
             'user_ids' => ['present', 'array'],
             'user_ids.*' => ['integer', 'exists:App\Models\User,id']
         ];
