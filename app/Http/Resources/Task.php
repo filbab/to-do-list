@@ -16,7 +16,7 @@ class Task extends JsonResource
             'id' => $this->resource->getId(),
             'title' => $this->resource->getTitle(),
             'description' => $this->resource->getDescription(),
-            'status' => $this->resource->getStatus(),
+            'status' => $this->resource->getStatusName(),
             'created_at' => $this->resource->getCreatedAt(),
             'users' => User::collection($this->resource->getUsers())
         ];

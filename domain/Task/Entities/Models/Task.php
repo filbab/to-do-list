@@ -28,9 +28,9 @@ class Task extends BaseModel
       return $this->description;
    }
 
-   public function getStatus(): string
+   public function getStatusName(): string
    {
-      return $this->status;
+      return $this->status->name;
    }
 
    public function getUsers(): Collection
@@ -56,7 +56,9 @@ class Task extends BaseModel
 
    public function scopeByStatus(Builder $query, ?string $status): void
    {
-      $query->where('status', $status);
+      $query->whereHas('status', function (Builder $query) use ($status) {
+         $query->where('name', $status);
+      });
    }
 
    public function scopeByUserIds(Builder $query, ?array $user_ids): void
