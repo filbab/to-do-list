@@ -55,9 +55,9 @@ class TaskQueryTest extends TestCase
     public function getTasks_multipleTasksExist_returnAllTasks(): void
     {
        // GIVEN
-       $task_1 = $this->createTask(['title' => 'Task 1']);
-       $task_2 = $this->createTask(['title' => 'Task 2']);
-       $task_3 = $this->createTask(['title' => 'Something to do']);
+       $this->createTask(['title' => 'Task 1']);
+       $this->createTask(['title' => 'Task 2']);
+       $this->createTask(['title' => 'Something to do']);
 
        $request = $this->mockRequest();
  
@@ -79,9 +79,9 @@ class TaskQueryTest extends TestCase
     public function getTasks_multipleTasksExistFilterByTitle_returnFilteredTasks(): void
     {
        // GIVEN
-       $task_1 = $this->createTask(['title' => 'Task 1']);
-       $task_2 = $this->createTask(['title' => 'Task 2']);
-       $task_3 = $this->createTask(['title' => 'Something to do']);
+       $this->createTask(['title' => 'Task 1']);
+       $this->createTask(['title' => 'Task 2']);
+       $this->createTask(['title' => 'Something to do']);
 
        $request = $this->mockRequest(title: 'task');
  
@@ -106,9 +106,9 @@ class TaskQueryTest extends TestCase
        $user_1 = User::factory()->create();
        $user_2 = User::factory()->create();
 
-       $task_1 = $this->createTask([]);
-       $task_2 = $this->createTask([], [$user_1->id, $user_2->id]);
-       $task_3 = $this->createTask([]);
+       $this->createTask([]);
+       $this->createTask([], [$user_1->id, $user_2->id]);
+       $this->createTask([]);
 
        $request = $this->mockRequest(user_ids: [$user_2->id]);
  
