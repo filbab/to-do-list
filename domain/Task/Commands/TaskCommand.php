@@ -6,7 +6,7 @@ namespace Domain\Task\Commands;
 
 use Domain\Task\Entities\Models\Task;
 use Domain\Task\Queries\TaskStatusQuery;
-use App\Http\Requests\Task\CreateUpdateTaskRequest;
+use App\Http\Requests\Interfaces\ICreateUpdateTaskRequest;
 
 class TaskCommand
 {
@@ -19,7 +19,7 @@ class TaskCommand
       $this->task_status_query = new TaskStatusQuery();
    }
 
-   public function store(CreateUpdateTaskRequest $request): Task
+   public function store(ICreateUpdateTaskRequest $request): Task
    {
       $status = $this->task_status_query->findStatus($request->getStatus());
 
@@ -35,7 +35,7 @@ class TaskCommand
       return $new_task;
    }
 
-   public function update(CreateUpdateTaskRequest $request, Task $task): Task
+   public function update(ICreateUpdateTaskRequest $request, Task $task): Task
    {
       $status = $this->task_status_query->findStatus($request->getStatus());
 

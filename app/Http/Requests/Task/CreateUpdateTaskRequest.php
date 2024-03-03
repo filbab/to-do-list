@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests\Task;
 
+use App\Http\Requests\Interfaces\ICreateUpdateTaskRequest;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateUpdateTaskRequest extends FormRequest
+class CreateUpdateTaskRequest extends FormRequest implements ICreateUpdateTaskRequest
 {
     public function rules(): array
     {
