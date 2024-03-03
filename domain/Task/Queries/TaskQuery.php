@@ -6,7 +6,7 @@ namespace Domain\Task\Queries;
 
 use Illuminate\Support\Collection;
 use Domain\Task\Entities\Models\Task;
-use App\Http\Requests\Task\ShowTasksRequest;
+use App\Http\Requests\Interfaces\IShowTasksRequest;
 
 class TaskQuery
 {
@@ -17,7 +17,7 @@ class TaskQuery
       $this->task = new Task();
    }
 
-   public function getTasks(ShowTasksRequest $request): ?Collection
+   public function getTasks(IShowTasksRequest $request): ?Collection
    {
       $query = $this->task::query();
       

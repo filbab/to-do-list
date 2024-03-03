@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace Domain\Task;
 
+use App\Http\Requests\Interfaces\IShowTasksRequest;
 use Domain\Task\Queries\TaskQuery;
 use Illuminate\Support\Collection;
 use Domain\Task\Entities\Models\Task;
 use Domain\Task\Commands\TaskCommand;
-use App\Http\Requests\Task\ShowTasksRequest;
-use App\Http\Requests\Task\CreateTaskRequest;
-use App\Http\Requests\Task\UpdateTaskRequest;
+use App\Http\Requests\Task\CreateUpdateTaskRequest;
 
 class TaskService
 {
@@ -23,18 +22,18 @@ class TaskService
       $this->task_command = new TaskCommand();
    }
 
-   public function getTasks(ShowTasksRequest $request): ?Collection
+   public function getTasks(IShowTasksRequest $request): ?Collection
    {
       return $this->task_query->getTasks($request);
    }
 
-   public function storeTask(CreateTaskRequest $request): Task
+   public function storeTask(CreateUpdateTaskRequest $request): Task
    {
       return $this->task_command->store($request);
       
    }
 
-   public function updateTask(UpdateTaskRequest $request, Task $task): Task
+   public function updateTask(CreateUpdateTaskRequest $request, Task $task): Task
    {
       return $this->task_command->update($request, $task);
    }

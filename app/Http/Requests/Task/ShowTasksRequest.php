@@ -3,8 +3,9 @@
 namespace App\Http\Requests\Task;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\Interfaces\IShowTasksRequest;
 
-class ShowTasksRequest extends FormRequest
+class ShowTasksRequest extends FormRequest implements IShowTasksRequest
 {
     public function rules(): array
     {
