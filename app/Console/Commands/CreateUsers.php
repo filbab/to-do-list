@@ -30,6 +30,6 @@ class CreateUsers extends Command
 
       $users = User::factory()->count($count)->create();
 
-      $this->info($users->pluck('email'));
+      $this->info($users->pluck('email', 'id'));
     }
 }
