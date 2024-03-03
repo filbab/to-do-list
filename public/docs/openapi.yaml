@@ -120,15 +120,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: llkknteyolhrdwuqofj
+                  example: chslb
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: dangelo.hahn@example.org
+                  example: obraun@example.net
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: 'k/}t%O`:&6qq{#V4B'
+                  example: '1[#;JAiE)jZW,wC2R|'
               required:
                 - name
                 - email
@@ -193,11 +193,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: marshall77@example.org
+                  example: aschneider@example.net
                 password:
                   type: string
                   description: ''
-                  example: eveniet
+                  example: laboriosam
               required:
                 - email
                 - password
@@ -212,22 +212,22 @@ paths:
           in: query
           name: title
           description: ''
-          example: non
+          example: quaerat
           required: true
           schema:
             type: string
             description: ''
-            example: non
+            example: quaerat
         -
           in: query
           name: status
           description: ''
-          example: architecto
+          example: qui
           required: true
           schema:
             type: string
             description: ''
-            example: architecto
+            example: qui
         -
           in: query
           name: 'user_ids[]'
@@ -328,27 +328,16 @@ paths:
       tags:
         - Endpoints
       requestBody:
-        required: false
+        required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                title:
-                  type: string
-                  description: ''
-                  example: consequuntur
-                status:
-                  type: string
-                  description: ''
-                  example: est
-                user_ids:
-                  type: array
-                  description: ''
-                  example:
-                    - 1
-                  items:
-                    type: integer
+              type: array
+              description: ''
+              example:
+                - quos
+              items:
+                type: ''
       security: []
     post:
       summary: ''
@@ -469,15 +458,15 @@ paths:
                 title:
                   type: string
                   description: ''
-                  example: dolorem
+                  example: incidunt
                 description:
                   type: 'string (nullable)'
                   description: ''
-                  example: 'Sit non magnam recusandae.'
+                  example: 'Adipisci et dolor maxime ea consequatur explicabo.'
                 status:
                   type: string
                   description: ''
-                  example: pending
+                  example: in
                   enum:
                     - pending
                     - in
@@ -613,15 +602,15 @@ paths:
                 title:
                   type: string
                   description: ''
-                  example: qui
+                  example: sit
                 description:
                   type: 'string (nullable)'
                   description: ''
-                  example: 'Id vero explicabo voluptatum et.'
+                  example: 'Suscipit excepturi facere et similique dolor.'
                 status:
                   type: string
                   description: ''
-                  example: completed
+                  example: pending
                   enum:
                     - pending
                     - in

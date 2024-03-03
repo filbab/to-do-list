@@ -266,9 +266,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"llkknteyolhrdwuqofj\",
-    \"email\": \"dangelo.hahn@example.org\",
-    \"password\": \"k\\/}t%O`:&amp;6qq{#V4B\"
+    \"name\": \"chslb\",
+    \"email\": \"obraun@example.net\",
+    \"password\": \"1[#;JAiE)jZW,wC2R|\"
 }"
 </code></pre></div>
 
@@ -284,9 +284,9 @@ const headers = {
 };
 
 let body = {
-    "name": "llkknteyolhrdwuqofj",
-    "email": "dangelo.hahn@example.org",
-    "password": "k\/}t%O`:&amp;6qq{#V4B"
+    "name": "chslb",
+    "email": "obraun@example.net",
+    "password": "1[#;JAiE)jZW,wC2R|"
 };
 
 fetch(url, {
@@ -409,10 +409,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-register"
-               value="llkknteyolhrdwuqofj"
+               value="chslb"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>llkknteyolhrdwuqofj</code></p>
+<p>Must not be greater than 255 characters. Example: <code>chslb</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -420,10 +420,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-register"
-               value="dangelo.hahn@example.org"
+               value="obraun@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>dangelo.hahn@example.org</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>obraun@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -431,10 +431,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-register"
-               value="k/}t%O`:&6qq{#V4B"
+               value="1[#;JAiE)jZW,wC2R|"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Example: <code>k/}t%O</code>:&amp;6qq{#V4B`</p>
+<p>Must be at least 6 characters. Example: <code>1[#;JAiE)jZW,wC2R|</code></p>
         </div>
         </form>
 
@@ -455,8 +455,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"marshall77@example.org\",
-    \"password\": \"eveniet\"
+    \"email\": \"aschneider@example.net\",
+    \"password\": \"laboriosam\"
 }"
 </code></pre></div>
 
@@ -472,8 +472,8 @@ const headers = {
 };
 
 let body = {
-    "email": "marshall77@example.org",
-    "password": "eveniet"
+    "email": "aschneider@example.net",
+    "password": "laboriosam"
 };
 
 fetch(url, {
@@ -586,10 +586,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="marshall77@example.org"
+               value="aschneider@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>marshall77@example.org</code></p>
+<p>Must be a valid email address. Example: <code>aschneider@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -597,10 +597,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="eveniet"
+               value="laboriosam"
                data-component="body">
     <br>
-<p>Example: <code>eveniet</code></p>
+<p>Example: <code>laboriosam</code></p>
         </div>
         </form>
 
@@ -617,16 +617,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/tasks?title=non&amp;status=architecto&amp;user_ids%5B%5D=12" \
+    --get "http://localhost/api/tasks?title=quaerat&amp;status=qui&amp;user_ids%5B%5D=12" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --data "{
-    \"title\": \"consequuntur\",
-    \"status\": \"est\",
-    \"user_ids\": [
-        1
-    ]
-}"
+    --data "[
+    \"quos\"
+]"
 </code></pre></div>
 
 
@@ -636,8 +632,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const params = {
-    "title": "non",
-    "status": "architecto",
+    "title": "quaerat",
+    "status": "qui",
     "user_ids[]": "12",
 };
 Object.keys(params)
@@ -648,13 +644,9 @@ const headers = {
     "Accept": "application/json",
 };
 
-let body = {
-    "title": "consequuntur",
-    "status": "est",
-    "user_ids": [
-        1
-    ]
-};
+let body = [
+    "quos"
+];
 
 fetch(url, {
     method: "GET",
@@ -721,7 +713,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
       data-path="api/tasks"
       data-authed="0"
       data-hasfiles="0"
-      data-isarraybody="0"
+      data-isarraybody="1"
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('GETapi-tasks', this);">
     <h3>
@@ -778,10 +770,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="GETapi-tasks"
-               value="non"
+               value="quaerat"
                data-component="query">
     <br>
-<p>Example: <code>non</code></p>
+<p>Example: <code>quaerat</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -789,10 +781,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="GETapi-tasks"
-               value="architecto"
+               value="qui"
                data-component="query">
     <br>
-<p>Example: <code>architecto</code></p>
+<p>Example: <code>qui</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>user_ids[]</code></b>&nbsp;&nbsp;
@@ -806,42 +798,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>12</code></p>
             </div>
                         <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="title"                data-endpoint="GETapi-tasks"
-               value="consequuntur"
-               data-component="body">
-    <br>
-<p>Example: <code>consequuntur</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="status"                data-endpoint="GETapi-tasks"
-               value="est"
-               data-component="body">
-    <br>
-<p>Example: <code>est</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>user_ids</code></b>&nbsp;&nbsp;
-<small>integer[]</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="user_ids[0]"                data-endpoint="GETapi-tasks"
-               data-component="body">
-        <input type="number" style="display: none"
-               name="user_ids[1]"                data-endpoint="GETapi-tasks"
-               data-component="body">
-    <br>
+        <p>The request body is an array (<code>[]</code>`).</p>
 
-        </div>
-        </form>
+                </form>
 
                     <h2 id="endpoints-POSTapi-tasks">POST api/tasks</h2>
 
@@ -860,9 +819,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"dolorem\",
-    \"description\": \"Sit non magnam recusandae.\",
-    \"status\": \"pending\",
+    \"title\": \"incidunt\",
+    \"description\": \"Adipisci et dolor maxime ea consequatur explicabo.\",
+    \"status\": \"in\",
     \"user_ids\": [
         12,
         34,
@@ -883,9 +842,9 @@ const headers = {
 };
 
 let body = {
-    "title": "dolorem",
-    "description": "Sit non magnam recusandae.",
-    "status": "pending",
+    "title": "incidunt",
+    "description": "Adipisci et dolor maxime ea consequatur explicabo.",
+    "status": "in",
     "user_ids": [
         12,
         34,
@@ -1030,10 +989,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-tasks"
-               value="dolorem"
+               value="incidunt"
                data-component="body">
     <br>
-<p>Example: <code>dolorem</code></p>
+<p>Example: <code>incidunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1041,10 +1000,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-tasks"
-               value="Sit non magnam recusandae."
+               value="Adipisci et dolor maxime ea consequatur explicabo."
                data-component="body">
     <br>
-<p>Example: <code>Sit non magnam recusandae.</code></p>
+<p>Example: <code>Adipisci et dolor maxime ea consequatur explicabo.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -1052,10 +1011,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="POSTapi-tasks"
-               value="pending"
+               value="in"
                data-component="body">
     <br>
-<p>Example: <code>pending</code></p>
+<p>Example: <code>in</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>pending</code></li> <li><code>in</code></li> <li><code>completed</code></li></ul>
         </div>
@@ -1089,9 +1048,9 @@ Must be one of:
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"qui\",
-    \"description\": \"Id vero explicabo voluptatum et.\",
-    \"status\": \"completed\",
+    \"title\": \"sit\",
+    \"description\": \"Suscipit excepturi facere et similique dolor.\",
+    \"status\": \"pending\",
     \"user_ids\": [
         12,
         34,
@@ -1112,9 +1071,9 @@ const headers = {
 };
 
 let body = {
-    "title": "qui",
-    "description": "Id vero explicabo voluptatum et.",
-    "status": "completed",
+    "title": "sit",
+    "description": "Suscipit excepturi facere et similique dolor.",
+    "status": "pending",
     "user_ids": [
         12,
         34,
@@ -1273,10 +1232,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="PUTapi-tasks--id-"
-               value="qui"
+               value="sit"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>sit</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1284,10 +1243,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-tasks--id-"
-               value="Id vero explicabo voluptatum et."
+               value="Suscipit excepturi facere et similique dolor."
                data-component="body">
     <br>
-<p>Example: <code>Id vero explicabo voluptatum et.</code></p>
+<p>Example: <code>Suscipit excepturi facere et similique dolor.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -1295,10 +1254,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="PUTapi-tasks--id-"
-               value="completed"
+               value="pending"
                data-component="body">
     <br>
-<p>Example: <code>completed</code></p>
+<p>Example: <code>pending</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>pending</code></li> <li><code>in</code></li> <li><code>completed</code></li></ul>
         </div>

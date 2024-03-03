@@ -18,6 +18,9 @@ class TaskController extends Controller
         private TaskService $service
     ) {}
 
+    /**
+     * @bodyParam [] []
+     */
     #[QueryParam("title")]
     #[QueryParam("status")]
     #[QueryParam("user_ids[]", type:"integer", example:"12")]

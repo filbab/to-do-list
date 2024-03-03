@@ -67,7 +67,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: llkknteyolhrdwuqofj
+        example: chslb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -76,7 +76,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: dangelo.hahn@example.org
+        example: obraun@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -85,15 +85,15 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: 'k/}t%O`:&6qq{#V4B'
+        example: '1[#;JAiE)jZW,wC2R|'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: llkknteyolhrdwuqofj
-      email: dangelo.hahn@example.org
-      password: 'k/}t%O`:&6qq{#V4B'
+      name: chslb
+      email: obraun@example.net
+      password: '1[#;JAiE)jZW,wC2R|'
     fileParameters: []
     responses:
       -
@@ -161,7 +161,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: marshall77@example.org
+        example: aschneider@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -170,14 +170,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: eveniet
+        example: laboriosam
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: marshall77@example.org
-      password: eveniet
+      email: aschneider@example.net
+      password: laboriosam
     fileParameters: []
     responses:
       -
@@ -233,7 +233,7 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: non
+        example: quaerat
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -242,7 +242,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: architecto
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -257,15 +257,15 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      title: non
-      status: architecto
+      title: quaerat
+      status: qui
       'user_ids[]': '12'
     bodyParameters:
       title:
         name: title
         description: ''
         required: false
-        example: consequuntur
+        example: iste
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -274,7 +274,7 @@ endpoints:
         name: status
         description: ''
         required: false
-        example: est
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -284,16 +284,23 @@ endpoints:
         description: ''
         required: false
         example:
-          - 1
+          - 18
         type: 'integer[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
+      '[]':
+        name: '[]'
+        description: ''
+        required: false
+        example:
+          - quos
+        type: '[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
     cleanBodyParameters:
-      title: consequuntur
-      status: est
-      user_ids:
-        - 1
+      - quos
     fileParameters: []
     responses:
       -
@@ -363,7 +370,7 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: dolorem
+        example: incidunt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -372,7 +379,7 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: 'Sit non magnam recusandae.'
+        example: 'Adipisci et dolor maxime ea consequatur explicabo.'
         type: 'string (nullable)'
         enumValues: []
         exampleWasSpecified: false
@@ -381,7 +388,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: pending
+        example: in
         type: string
         enumValues:
           - pending
@@ -402,9 +409,9 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: dolorem
-      description: 'Sit non magnam recusandae.'
-      status: pending
+      title: incidunt
+      description: 'Adipisci et dolor maxime ea consequatur explicabo.'
+      status: in
       user_ids:
         - 12
         - 34
@@ -503,7 +510,7 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: qui
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -512,7 +519,7 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: 'Id vero explicabo voluptatum et.'
+        example: 'Suscipit excepturi facere et similique dolor.'
         type: 'string (nullable)'
         enumValues: []
         exampleWasSpecified: false
@@ -521,7 +528,7 @@ endpoints:
         name: status
         description: ''
         required: true
-        example: completed
+        example: pending
         type: string
         enumValues:
           - pending
@@ -542,9 +549,9 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: qui
-      description: 'Id vero explicabo voluptatum et.'
-      status: completed
+      title: sit
+      description: 'Suscipit excepturi facere et similique dolor.'
+      status: pending
       user_ids:
         - 12
         - 34

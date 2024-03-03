@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "fedd2e1a-60e4-4d44-902f-67569f39b298",
+        "_postman_id": "6ee667a0-2abc-4e0b-9b01-82b192841a9d",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -89,7 +89,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"llkknteyolhrdwuqofj\",\"email\":\"dangelo.hahn@example.org\",\"password\":\"k\\\/}t%O`:&6qq{#V4B\"}"
+                            "raw": "{\"name\":\"chslb\",\"email\":\"obraun@example.net\",\"password\":\"1[#;JAiE)jZW,wC2R|\"}"
                         },
                         "description": "",
                         "auth": {
@@ -133,7 +133,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"marshall77@example.org\",\"password\":\"eveniet\"}"
+                            "raw": "{\"email\":\"aschneider@example.net\",\"password\":\"laboriosam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -164,13 +164,13 @@
                             "query": [
                                 {
                                     "key": "title",
-                                    "value": "non",
+                                    "value": "quaerat",
                                     "description": "",
                                     "disabled": false
                                 },
                                 {
                                     "key": "status",
-                                    "value": "architecto",
+                                    "value": "qui",
                                     "description": "",
                                     "disabled": false
                                 },
@@ -181,7 +181,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/tasks?title=non&status=architecto&user_ids%5B%5D=12"
+                            "raw": "{{baseUrl}}\/api\/tasks?title=quaerat&status=qui&user_ids%5B%5D=12"
                         },
                         "method": "GET",
                         "header": [
@@ -196,7 +196,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"consequuntur\",\"status\":\"est\",\"user_ids\":[1]}"
+                            "raw": "[\"quos\"]"
                         },
                         "description": "",
                         "auth": {
@@ -240,7 +240,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"dolorem\",\"description\":\"Sit non magnam recusandae.\",\"status\":\"pending\",\"user_ids\":[12,34,56]}"
+                            "raw": "{\"title\":\"incidunt\",\"description\":\"Adipisci et dolor maxime ea consequatur explicabo.\",\"status\":\"in\",\"user_ids\":[12,34,56]}"
                         },
                         "description": "",
                         "auth": {
@@ -298,7 +298,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"qui\",\"description\":\"Id vero explicabo voluptatum et.\",\"status\":\"completed\",\"user_ids\":[12,34,56]}"
+                            "raw": "{\"title\":\"sit\",\"description\":\"Suscipit excepturi facere et similique dolor.\",\"status\":\"pending\",\"user_ids\":[12,34,56]}"
                         },
                         "description": "",
                         "auth": {
