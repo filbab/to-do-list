@@ -1,0 +1,11 @@
+{
+   "message": "The email has already been taken. (and 1 more error)",
+   "errors": {
+       "email": [
+           "The email has already been taken."
+       ],
+       "password": [
+           "The password field confirmation does not match."
+       ]
+   }
+}

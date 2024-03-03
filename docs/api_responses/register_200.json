@@ -1,0 +1,11 @@
+{
+    "data": {
+        "name": "New User",
+        "email": "user@example.com",
+        "updated_at": "2024-03-03T11:44:46.000000Z",
+        "created_at": "2024-03-03T11:44:46.000000Z",
+        "id": 329
+    },
+    "access_token": "1|Ry2kDIQv2AukIHPrzJYFBcwlPshbWbD0wVhJ89sN67d3d573",
+    "token_type": "Bearer"
+}

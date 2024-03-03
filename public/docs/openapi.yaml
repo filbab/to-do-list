@@ -1,0 +1,689 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/register:
+    post:
+      summary: ''
+      operationId: postApiRegister
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    name: 'New User'
+                    email: user@example.com
+                    updated_at: '2024-03-03T11:44:46.000000Z'
+                    created_at: '2024-03-03T11:44:46.000000Z'
+                    id: 329
+                  access_token: 1|Ry2kDIQv2AukIHPrzJYFBcwlPshbWbD0wVhJ89sN67d3d573
+                  token_type: Bearer
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        example: 'New User'
+                      email:
+                        type: string
+                        example: user@example.com
+                      updated_at:
+                        type: string
+                        example: '2024-03-03T11:44:46.000000Z'
+                      created_at:
+                        type: string
+                        example: '2024-03-03T11:44:46.000000Z'
+                      id:
+                        type: integer
+                        example: 329
+                  access_token:
+                    type: string
+                    example: 1|Ry2kDIQv2AukIHPrzJYFBcwlPshbWbD0wVhJ89sN67d3d573
+                  token_type:
+                    type: string
+                    example: Bearer
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The email has already been taken. (and 1 more error)'
+                  errors:
+                    email:
+                      - 'The email has already been taken.'
+                    password:
+                      - 'The password field confirmation does not match.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The email has already been taken. (and 1 more error)'
+                  errors:
+                    type: object
+                    properties:
+                      email:
+                        type: array
+                        example:
+                          - 'The email has already been taken.'
+                        items:
+                          type: string
+                      password:
+                        type: array
+                        example:
+                          - 'The password field confirmation does not match.'
+                        items:
+                          type: string
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: llkknteyolhrdwuqofj
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: dangelo.hahn@example.org
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters.'
+                  example: 'k/}t%O`:&6qq{#V4B'
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/login:
+    post:
+      summary: ''
+      operationId: postApiLogin
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  access_token: 2|exaniUODY4PqGbYRHT4VX5aWSe5RiWhLJCJEEghF198cc3b6
+                  token_type: Bearer
+                properties:
+                  access_token:
+                    type: string
+                    example: 2|exaniUODY4PqGbYRHT4VX5aWSe5RiWhLJCJEEghF198cc3b6
+                  token_type:
+                    type: string
+                    example: Bearer
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The email field must be a valid email address.'
+                  errors:
+                    email:
+                      - 'The email field must be a valid email address.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The email field must be a valid email address.'
+                  errors:
+                    type: object
+                    properties:
+                      email:
+                        type: array
+                        example:
+                          - 'The email field must be a valid email address.'
+                        items:
+                          type: string
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: marshall77@example.org
+                password:
+                  type: string
+                  description: ''
+                  example: eveniet
+              required:
+                - email
+                - password
+      security: []
+  /api/tasks:
+    get:
+      summary: ''
+      operationId: getApiTasks
+      description: ''
+      parameters:
+        -
+          in: query
+          name: title
+          description: ''
+          example: non
+          required: true
+          schema:
+            type: string
+            description: ''
+            example: non
+        -
+          in: query
+          name: status
+          description: ''
+          example: architecto
+          required: true
+          schema:
+            type: string
+            description: ''
+            example: architecto
+        -
+          in: query
+          name: 'user_ids[]'
+          description: ''
+          example: '12'
+          required: true
+          schema:
+            type: integer
+            description: ''
+            example: '12'
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 174
+                      title: 'Task 1'
+                      description: 'Important task'
+                      status: pending
+                      created_at: '2024-03-03T12:13:23.000000Z'
+                      users:
+                        -
+                          id: 320
+                          name: 'Dino Hane I'
+                        -
+                          id: 321
+                          name: 'Sedrick Johnston'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 174
+                        title: 'Task 1'
+                        description: 'Important task'
+                        status: pending
+                        created_at: '2024-03-03T12:13:23.000000Z'
+                        users:
+                          -
+                            id: 320
+                            name: 'Dino Hane I'
+                          -
+                            id: 321
+                            name: 'Sedrick Johnston'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 174
+                        title:
+                          type: string
+                          example: 'Task 1'
+                        description:
+                          type: string
+                          example: 'Important task'
+                        status:
+                          type: string
+                          example: pending
+                        created_at:
+                          type: string
+                          example: '2024-03-03T12:13:23.000000Z'
+                        users:
+                          type: array
+                          example:
+                            -
+                              id: 320
+                              name: 'Dino Hane I'
+                            -
+                              id: 321
+                              name: 'Sedrick Johnston'
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 320
+                              name:
+                                type: string
+                                example: 'Dino Hane I'
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: consequuntur
+                status:
+                  type: string
+                  description: ''
+                  example: est
+                user_ids:
+                  type: array
+                  description: ''
+                  example:
+                    - 1
+                  items:
+                    type: integer
+      security: []
+    post:
+      summary: ''
+      operationId: postApiTasks
+      description: ''
+      parameters: []
+      responses:
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 174
+                    title: 'Task 1'
+                    description: 'Important task'
+                    status: pending
+                    created_at: '2024-03-03T12:13:23.000000Z'
+                    users:
+                      -
+                        id: 320
+                        name: 'Dino Hane I'
+                      -
+                        id: 321
+                        name: 'Sedrick Johnston'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 174
+                      title:
+                        type: string
+                        example: 'Task 1'
+                      description:
+                        type: string
+                        example: 'Important task'
+                      status:
+                        type: string
+                        example: pending
+                      created_at:
+                        type: string
+                        example: '2024-03-03T12:13:23.000000Z'
+                      users:
+                        type: array
+                        example:
+                          -
+                            id: 320
+                            name: 'Dino Hane I'
+                          -
+                            id: 321
+                            name: 'Sedrick Johnston'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 320
+                            name:
+                              type: string
+                              example: 'Dino Hane I'
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The selected user_ids.0 is invalid. (and 1 more error)'
+                  errors:
+                    user_ids.0:
+                      - 'The selected user_ids.0 is invalid.'
+                    user_ids.1:
+                      - 'The selected user_ids.1 is invalid.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The selected user_ids.0 is invalid. (and 1 more error)'
+                  errors:
+                    type: object
+                    properties:
+                      user_ids.0:
+                        type: array
+                        example:
+                          - 'The selected user_ids.0 is invalid.'
+                        items:
+                          type: string
+                      user_ids.1:
+                        type: array
+                        example:
+                          - 'The selected user_ids.1 is invalid.'
+                        items:
+                          type: string
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: dolorem
+                description:
+                  type: 'string (nullable)'
+                  description: ''
+                  example: 'Sit non magnam recusandae.'
+                status:
+                  type: string
+                  description: ''
+                  example: pending
+                  enum:
+                    - pending
+                    - in
+                    - completed
+                user_ids:
+                  type: 'array of integers'
+                  description: ''
+                  example:
+                    - 12
+                    - 34
+                    - 56
+              required:
+                - title
+                - description
+                - status
+                - user_ids
+      security: []
+  '/api/tasks/{id}':
+    put:
+      summary: ''
+      operationId: putApiTasksId
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 175
+                    title: 'Updated task 3 from API!'
+                    description: 'Updated description'
+                    status: completed
+                    created_at: '2024-03-03T12:16:54.000000Z'
+                    users:
+                      -
+                        id: 320
+                        name: 'Dino Hane I'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 175
+                      title:
+                        type: string
+                        example: 'Updated task 3 from API!'
+                      description:
+                        type: string
+                        example: 'Updated description'
+                      status:
+                        type: string
+                        example: completed
+                      created_at:
+                        type: string
+                        example: '2024-03-03T12:16:54.000000Z'
+                      users:
+                        type: array
+                        example:
+                          -
+                            id: 320
+                            name: 'Dino Hane I'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 320
+                            name:
+                              type: string
+                              example: 'Dino Hane I'
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Task with given id does not exist!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Task with given id does not exist!'
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The selected user_ids.0 is invalid.'
+                  errors:
+                    user_ids.0:
+                      - 'The selected user_ids.0 is invalid.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The selected user_ids.0 is invalid.'
+                  errors:
+                    type: object
+                    properties:
+                      user_ids.0:
+                        type: array
+                        example:
+                          - 'The selected user_ids.0 is invalid.'
+                        items:
+                          type: string
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: qui
+                description:
+                  type: 'string (nullable)'
+                  description: ''
+                  example: 'Id vero explicabo voluptatum et.'
+                status:
+                  type: string
+                  description: ''
+                  example: completed
+                  enum:
+                    - pending
+                    - in
+                    - completed
+                user_ids:
+                  type: 'array of integers'
+                  description: ''
+                  example:
+                    - 12
+                    - 34
+                    - 56
+              required:
+                - title
+                - description
+                - status
+                - user_ids
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiTasksId
+      description: ''
+      parameters: []
+      responses:
+        204:
+          description: ''
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+        404:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Task with given id does not exist!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Task with given id does not exist!'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the task.'
+        example: 174
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Endpoints
+    description: ''

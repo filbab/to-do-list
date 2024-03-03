@@ -1,0 +1,8 @@
+{
+   "message": "The selected user_ids.0 is invalid.",
+   "errors": {
+       "user_ids.0": [
+           "The selected user_ids.0 is invalid."
+       ]
+   }
+}
