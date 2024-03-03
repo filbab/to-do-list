@@ -33,6 +33,12 @@ php artisan test
 ```
 To run all PHPUnit tests
 
+If for some reason the database tables haven't been set up with the initial `./vendor/bin/sail up` command, run:
+
+```
+php artisan migrate
+```
+
 ## API documentation
 With the project running, you can browse the API documentation at
 [http://localhost/docs](http://localhost/docs)
@@ -49,3 +55,10 @@ If you need some dummy users for testing, use this command (the example below cr
 ```
 php artisan create:users --count=10
 ```
+The command also displays the __id__ and __email__ of newly created users.
+
+The default password of the command-created users is "password".
+
+So any of these emails can be used for authorization.
+To receive the bearer token you must send a login request passing email and password as body parameters (detail in [API documentation](http://localhost/docs)).
+Of course if you wish you can register a new user.
