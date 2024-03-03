@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Domain\Task\TaskService;
 use Domain\Task\Entities\Models\Task;
-use App\Http\Resources\Task as TaskResource;
-use App\Http\Requests\Task\ShowTasksRequest;
-use App\Http\Requests\Task\CreateTaskRequest;
-use App\Http\Requests\Task\UpdateTaskRequest;
 use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\QueryParam;
+use App\Http\Resources\Task as TaskResource;
+use App\Http\Requests\Task\ShowTasksRequest;
 use Knuckles\Scribe\Attributes\ResponseFromFile;
+use App\Http\Requests\Task\CreateUpdateTaskRequest;
 
 class TaskController extends Controller
 {
@@ -40,7 +39,7 @@ class TaskController extends Controller
     #[ResponseFromFile("docs/api_responses/store_201.json", 201)]
     #[ResponseFromFile("docs/api_responses/store_422.json", 422)]
     #[ResponseFromFile("docs/api_responses/401.json", 401)]
-    public function store(CreateTaskRequest $request)
+    public function store(CreateUpdateTaskRequest $request)
     {
         $task = $this->service->storeTask($request);
 
@@ -55,7 +54,7 @@ class TaskController extends Controller
     #[ResponseFromFile("docs/api_responses/update_404.json", 404)]
     #[ResponseFromFile("docs/api_responses/update_422.json", 422)]
     #[ResponseFromFile("docs/api_responses/401.json", 401)]
-    public function update(UpdateTaskRequest $request, Task $task)
+    public function update(CreateUpdateTaskRequest $request, Task $task)
     {
         $task = $this->service->updateTask($request, $task);
 
