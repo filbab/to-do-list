@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests\Task;
 
-use Illuminate\Validation\Rule;
-use App\Models\Descriptors\TaskStatus;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateTaskRequest extends FormRequest
+class CreateUpdateTaskRequest extends FormRequest
 {
     public function rules(): array
     {
