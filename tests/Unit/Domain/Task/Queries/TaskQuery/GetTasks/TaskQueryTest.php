@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Domain\Task\Queries\TaskQuery\GetTasks;
 
-use App\Models\TaskStatus;
-use App\Models\User;
 use Tests\TestCase;
+use App\Models\User;
+use App\Models\TaskStatus;
 use Domain\Task\Queries\TaskQuery;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
