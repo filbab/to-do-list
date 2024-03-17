@@ -1,10 +1,15 @@
 ## Project setup
 Prerequisite: Docker installed
 
-To run the project, simply open terminal at project's root and run:
+To run the project, run the following command in terminal:
 
-```
-./vendor/bin/sail up
+```bash
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php83-composer:latest \
+    composer install --ignore-platform-reqs
 ```
 
 (You can use "-d" option to run in detached mode)
