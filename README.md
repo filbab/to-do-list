@@ -1,7 +1,7 @@
 ## Project setup
 Prerequisite: Docker installed
 
-To run the project, run the following command in terminal:
+To install the dependencies, run the following command in terminal:
 
 ```bash
 docker run --rm \
@@ -10,6 +10,11 @@ docker run --rm \
     -w /var/www/html \
     laravelsail/php83-composer:latest \
     composer install --ignore-platform-reqs
+```
+
+To start the containers, use:
+```
+./vendor/bin/sail up
 ```
 
 (You can use "-d" option to run in detached mode)
@@ -38,7 +43,7 @@ php artisan test
 ```
 To run all PHPUnit tests
 
-If for some reason the database tables haven't been set up with the initial `./vendor/bin/sail up` command, run:
+If the database tables haven't been set up, run:
 
 ```
 php artisan migrate
